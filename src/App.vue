@@ -5,29 +5,37 @@ const arrayColores = [ "blue", "red","pink", "purple" ]
 const activo = false;
 
 // const arrayFrutas = ["🍎", "🍌", "🍉", "🍓", "🍒"];
-const arrayFrutas = [
-    {
-        name: "Manzana",
-        price: "$1.00",
-        description: "Una manzana",
-        stock: 0,
-        id:1,
-    },
-    {
-        name: "Pera",
-        price: "$2.00",
-        description: "Una pera",
-        stock: 10,
-        id:2,
-    },
-    {
-        name: "Naranja",
-        price: "$3.00",
-        description: "Una naranja",
-        stock: 20,
-        id:3,
-    },
-];
+// const arrayFrutas = [
+//     {
+//         name: "Manzana",
+//         price: "$1.00",
+//         description: "Una manzana",
+//         stock: 0,
+//         id:1,
+//     },
+//     {
+//         name: "Pera",
+//         price: "$2.00",
+//         description: "Una pera",
+//         stock: 10,
+//         id:2,
+//     },
+//     {
+//         name: "Naranja",
+//         price: "$3.00",
+//         description: "Una naranja",
+//         stock: 20,
+//         id:3,
+//     },
+// ];
+
+const objetoManzana ={
+  name: "Manzana",
+  price: "$1.00",
+  description: "Una manzana",
+  stock: 0,
+  id:1,
+}
 </script>
 
 <template>
@@ -65,11 +73,18 @@ const arrayFrutas = [
    </ul> -->
 
    <!-- v-for (array de objetos)(Key es el elemento unico que no se debe de repetir) -->
-    <ul>
+    <!-- <ul>
       <li v-for="fruta2 in arrayFrutas" :key="fruta2.id">
         {{ fruta2.name }} - {{ fruta2.price }} - {{ fruta2.description }}
       </li>
-    </ul>
+    </ul> -->
+
+    <!-- v-for (objetos) -->
+     <ul>
+      <li v-for="(manzana,propiedad, index) in objetoManzana" :key="index">
+        {{index}}.- {{propiedad}}: {{ manzana }}
+      </li>
+     </ul>
 
 </template>
 
