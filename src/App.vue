@@ -5,37 +5,37 @@ const arrayColores = [ "blue", "red","pink", "purple" ]
 const activo = false;
 
 // const arrayFrutas = ["🍎", "🍌", "🍉", "🍓", "🍒"];
-// const arrayFrutas = [
-//     {
-//         name: "Manzana",
-//         price: "$1.00",
-//         description: "Una manzana",
-//         stock: 0,
-//         id:1,
-//     },
-//     {
-//         name: "Pera",
-//         price: "$2.00",
-//         description: "Una pera",
-//         stock: 10,
-//         id:2,
-//     },
-//     {
-//         name: "Naranja",
-//         price: "$3.00",
-//         description: "Una naranja",
-//         stock: 20,
-//         id:3,
-//     },
-// ];
+const arrayFrutas = [
+    {
+        name: "Manzana",
+        price: "$1.00",
+        description: "Una manzana",
+        stock: 0,
+        id:1,
+    },
+    {
+        name: "Pera",
+        price: "$2.00",
+        description: "Una pera",
+        stock: 10,
+        id:2,
+    },
+    {
+        name: "Naranja",
+        price: "$3.00",
+        description: "Una naranja",
+        stock: 20,
+        id:3,
+    },
+];
 
-const objetoManzana ={
-  name: "Manzana",
-  price: "$1.00",
-  description: "Una manzana",
-  stock: 0,
-  id:1,
-}
+// const objetoManzana ={
+//   name: "Manzana",
+//   price: "$1.00",
+//   description: "Una manzana",
+//   stock: 0,
+//   id:1,
+// }
 </script>
 
 <template>
@@ -80,10 +80,18 @@ const objetoManzana ={
     </ul> -->
 
     <!-- v-for (objetos) -->
-     <ul>
+     <!-- <ul>
       <li v-for="(manzana,propiedad, index) in objetoManzana" :key="index">
         {{index}}.- {{propiedad}}: {{ manzana }}
       </li>
+     </ul> -->
+
+
+    <!-- v-for + v-if + template -->
+     <ul>
+      <template v-for="item in arrayFrutas" :key="item.name">
+        <li v-if="item.stock > 10"> {{ item.name }} - {{ item.price }}</li>
+      </template>
      </ul>
 
 </template>
