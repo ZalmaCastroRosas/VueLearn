@@ -3,6 +3,8 @@ const name = ', mi primer proyecto';
 const styleColor = 'color: green';
 const arrayColores = [ "blue", "red","pink", "purple" ]
 const activo = false;
+
+const arrayFrutas = ["🍎", "🍌", "🍉", "🍓", "🍒"];
 </script>
 
 <template>
@@ -11,25 +13,34 @@ const activo = false;
   <h1 :style="styleColor">Hola Zalma{{ name }}</h1>
 
   <!-- Expresiones JS -->
-  <h1 :style="styleColor">Hola Zalma{{ name.toUpperCase ()}}</h1>
-  <h2 :style="`color: ${arrayColores[3]}`">Prueba de color</h2> <!--Interpolacion-->
+  <!-- <h1 :style="styleColor">Hola Zalma{{ name.toUpperCase ()}}</h1>
+  <h2 :style="`color: ${arrayColores[3]}`">Prueba de color</h2> Interpolacion -->
   <!-- <h2>{{ activo ? "Estoy activo" : "Estoy inactivo" }}</h2> -->
 
 <!-- Directivas -->
   <!-- v-if -->
-   <h2 v-if="activo">Estoy activo</h2>
-   <h2 v-if="!activo">Estoy inactivo</h2>
+   <!-- <h2 v-if="activo">Estoy activo</h2>
+   <h2 v-if="!activo">Estoy inactivo</h2> -->
   <!-- v-if/else -->
-   <h2 v-if="activo">Estoy activo</h2>
-   <h2 v-else>Estoy inactivo</h2>
+   <!-- <h2 v-if="activo">Estoy activo</h2>
+   <h2 v-else>Estoy inactivo</h2> -->
 
   <!-- v-else-if -->
-   <h2 v-if="activo === true">Estoy activo</h2>
+   <!-- <h2 v-if="activo === true">Estoy activo</h2>
    <h2 v-else-if="activo === false">Estoy inactivo</h2>
-   <p v-else>Estoy indeciso</p>
+   <p v-else>Estoy indeciso</p> -->
 
    <!-- v-show (Pone la propiedad display:none;)-->
-    <p v-show="activo">Estoy activo v-show</p>
+    <!-- <p v-show="activo">Estoy activo v-show</p> -->
+
+
+  <!-- v-for -->
+   <ul>
+    <li v-for="fruta in arrayFrutas">{{fruta}}</li>
+    <li v-for="(fruta, index) in arrayFrutas">{{index}} .- {{fruta}}</li>
+    <li v-for="(fruta, index) in arrayFrutas" :key="index">{{index}} .- {{fruta}}</li>
+   </ul>
+
 </template>
 
 <style>
